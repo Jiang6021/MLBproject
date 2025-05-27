@@ -27,7 +27,7 @@ urlpatterns = [
     path('hello', sayhello),  #index的概念
     path('api/era/', get_era_from_mlb, name='get_era_data'),
     path('api/WL/', get_pitcher_win_loss, name='get_WL_data'),
-    path('listone/', views.listone),
-    path('listall/', views.listall),
+    #path('listone/', views.listone),
+    #path('listall/', views.listall),
     #path('index/', views.index),
 ]

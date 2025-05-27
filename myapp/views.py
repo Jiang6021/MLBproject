@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 import requests
-from myapp.models import student
+#from myapp.models import student
 
 
 #from datetime import datetime
@@ -11,6 +11,7 @@ def sayhello(request):
     return HttpResponse("hello!")
 def homepage(request):
     return render(request, 'index.html')
+'''
 def listone(request):
     try:
         unit = student.objects.get(cName="luna") #讀取一筆資料
@@ -21,7 +22,7 @@ def listone(request):
 def listall(request):
     students = student.objects.all().order_by('id')  #讀取
     return render(request, "listall.html", locals())
-
+'''
 def index(request):
     return HttpResponse("這是首頁 index")
 
