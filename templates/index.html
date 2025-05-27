@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Pitcher Dashboard</title>
-  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'css/style.css' %}?{% now 'U' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div class="dashboard">
@@ -86,6 +86,6 @@
 
   <!-- 載入 Chart.js 與自定義 JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/script.js' %}?{% now 'U' %}"></script>
 </body>
 </html>
