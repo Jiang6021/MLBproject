@@ -1,18 +1,17 @@
 # Python
-__pycache__/        # Python 會自動產生的暫存資料夾
-*.py[cod]           # 編譯後的 Python 檔案
-*.pyo / *.pyd       # Python 執行時會產生的檔案
+__pycache__/
+*.py[cod]
 
 # Django
-*.sqlite3           # 本地 SQLite 資料庫（除非你要 version 控制資料庫內容）
-*.log               # Log 檔案
-.env                # 儲存環境變數（常含密碼或 API 金鑰）
-staticfiles/        # Django 收集靜態檔案用的資料夾
-media/              # 使用者上傳的圖片等媒體資料夾
+*.sqlite3
+*.log
+*.db
+.env
 
-# VSCode
-.vscode/            # VS Code 的個人設定（通常與專案功能無關）
+# VS Code
+.vscode/
 
 # OS 系統檔
-.DS_Store           # macOS 自動產生的資料夾設定檔
-Thumbs.db           # Windows 自動產生的縮圖快取
+.DS_Store
+Thumbs.db
+
