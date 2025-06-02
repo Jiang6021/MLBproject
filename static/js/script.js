@@ -143,16 +143,21 @@ new Chart(performanceCtx, {
   });
 
 
-
 // Pitch distribution donut chart
 const pitchCtx = document.getElementById('pitchDistributionChart').getContext('2d');
 new Chart(pitchCtx, {
   type: 'doughnut',
   data: {
-    labels: ['FOUR-SEAM', 'CHANGEUP', 'KNUCKLE CURVE', 'SLIDER'],
+    labels: ['FOUR-SEAM (FA)', 'SPLITTER (FS)', 'CURVEBALL (CU)', 'CUTTER (FC)', 'SINKER (SI)'],
     datasets: [{
-      data: [35, 25, 20, 20],
-      backgroundColor: ['#ff0000', '#00ff00', '#00ffff', '#ffff00'],
+      data: [37, 28, 19, 8, 6],
+      backgroundColor: [
+        '#e63946',  // FA
+        '#f1fa8c',  // FS
+        '#577590',  // CU
+        '#ffb703',  // FC
+        '#8ac926'   // SI
+      ],
       borderWidth: 0
     }]
   },
