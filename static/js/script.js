@@ -101,80 +101,35 @@ function updatePerformanceIndicator() {
   }
 }
 
-// Create performance trend chart
-const performanceCtx = document.getElementById('performanceChart').getContext('2d');
-new Chart(performanceCtx, {
-    type: 'line',
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  const pitchCtx = document.getElementById('pitchDistributionChart').getContext('2d');
+  new Chart(pitchCtx, {
+    type: 'doughnut',
     data: {
-      labels: eraData.labels,
-      datasets: [
-        {
-          label: 'ERA',
-          data: eraData.values,
-          borderColor: '#1a5fb4',
-          backgroundColor: 'rgba(26, 95, 180, 0.1)',
-          tension: 0.4,
-          fill: true
-        },
-        {
-          label: 'FIP',
-          data: fipValues,
-          borderColor: '#4caf50',
-          backgroundColor: 'rgba(76, 175, 80, 0.1)',
-          tension: 0.4,
-          fill: false
-        }
-      ]
+      labels: ['四縫線速球 (FA)', '指叉球 (FS)', '曲球 (CU)', '卡特球 (FC)', 'S伸卡球 (SI)'],
+      datasets: [{
+        data: [37, 28, 19, 8, 6],
+        backgroundColor: [
+          '#e63946', '#f1fa8c', '#577590', '#ffb703', '#8ac926'
+        ],
+        borderWidth: 0
+      }]
     },
     options: {
       responsive: true,
+      cutout: '70%',
       plugins: {
-        legend: { display: true, position: 'top' }
-      },
-      scales: {
-        y: {
-          beginAtZero: false,
-          ticks: {
-            callback: value => value.toFixed(2)
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `使用率: ${context.raw}%`;
+            }
           }
         }
       }
     }
   });
-
-
-// Pitch distribution donut chart
-const pitchCtx = document.getElementById('pitchDistributionChart').getContext('2d');
-new Chart(pitchCtx, {
-  type: 'doughnut',
-  data: {
-    labels: ['FOUR-SEAM (FA)', 'SPLITTER (FS)', 'CURVEBALL (CU)', 'CUTTER (FC)', 'SINKER (SI)'],
-    datasets: [{
-      data: [37, 28, 19, 8, 6],
-      backgroundColor: [
-        '#e63946',  // FA
-        '#f1fa8c',  // FS
-        '#577590',  // CU
-        '#ffb703',  // FC
-        '#8ac926'   // SI
-      ],
-      borderWidth: 0
-    }]
-  },
-  options: {
-    responsive: true,
-    cutout: '70%',
-    plugins: {
-      legend: {
-        display: false
-      },
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            return `${context.label}: ${context.raw}%`;
-          }
-        }
-      }
-    }
-  }
 });

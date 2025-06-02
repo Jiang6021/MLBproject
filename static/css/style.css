@@ -127,3 +127,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.donut-chart canvas {
+  max-width: 250px;
+  max-height: 250px;
+  margin: 0 auto;
+  display: block;
+}
