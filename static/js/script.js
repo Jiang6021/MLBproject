@@ -48,7 +48,7 @@ Promise.all([
 // 🎯 畫 ERA &FIP趨勢圖的函式
 function drawERAChart() {
   const ctx = document.getElementById('performanceChart').getContext('2d');
-  const fipValues = [6.0, 5.5, 4.8, 8.7, 6.0];
+  const fipValues = [1.77, 1.89, 2.17, 2.37, 3.02];
   new Chart(ctx, {
     type: 'line',
     data: {
