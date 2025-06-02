@@ -60,28 +60,50 @@
           <div class="donut-chart">
             <canvas id="pitchDistributionChart"></canvas>
           </div>
+
+
           <div class="pitch-stats">
             <div class="pitch-stat-row">
-              <span class="pitch-type" style="color: #ff0000">FOUR-SEAM</span>
-              <span class="pitch-baa">BAA: .231</span>
+              <span class="pitch-type" style="color: #e63946; font-weight: 600;">四縫線</span>
+              <span class="pitch-baa">BAA: .231 / Whiff: 14.7%</span>
             </div>
             <div class="pitch-stat-row">
-              <span class="pitch-type" style="color: #00ff00">CHANGEUP</span>
-              <span class="pitch-baa">BAA: .133</span>
+              <span class="pitch-type" style="color: #d4c000; font-weight: 600;">指叉球</span>
+              <span class="pitch-baa">BAA: .114 / Whiff: 43.4%</span>
             </div>
             <div class="pitch-stat-row">
-              <span class="pitch-type" style="color: #00ffff">KNUCKLE CURVE</span>
-              <span class="pitch-baa">BAA: .200</span>
+              <span class="pitch-type" style="color: #344e72; font-weight: 600;">曲球</span>
+              <span class="pitch-baa">BAA: .273 / Whiff: 39.7%</span>
             </div>
             <div class="pitch-stat-row">
-              <span class="pitch-type" style="color: #ffff00">SLIDER</span>
-              <span class="pitch-baa">BAA: .571</span>
+              <span class="pitch-type" style="color: #e08d00; font-weight: 600;">卡特球</span>
+              <span class="pitch-baa">BAA: .263 / Whiff: 27.8%</span>
+            </div>
+            <div class="pitch-stat-row">
+              <span class="pitch-type" style="color: #5b8c00; font-weight: 600;">伸卡球</span>
+              <span class="pitch-baa">BAA: .231 / Whiff: 21.4%</span>
             </div>
           </div>
         </div>
       </div>
 
     </div>
+    <!-- 以下新增的圖表：出手點與球路位移 -->
+    <div class="charts-container">
+
+      <!-- 左邊：出手點圖 -->
+      <div class="chart-section">
+        <h2>2025 出手點圖（Release Point）</h2>
+        <img src="{% static 'images/release_point.png' %}" alt="Release Point" style="width: 100%; max-width: 300px; display: block; margin: auto;">
+      </div>
+
+      <!-- 右邊：球路移動圖 -->
+      <div class="chart-section">
+        <h2>2025 球路移動圖（Movement Profile）</h2>
+        <img src="{% static 'images/movement_profile.png' %}" alt="Movement Profile" style="width: 100%; max-width: 300px; display: block; margin: auto;">
+      </div>
+    </div>
+
   </div>
 
   <!-- 載入 Chart.js 與自定義 JS -->
